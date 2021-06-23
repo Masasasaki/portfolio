@@ -13,7 +13,12 @@ const App = () => {
             <Box minW='375px'>
                 <SideBar backgroundColor={color} />
             </Box>
-            <AccessButtonWrap height={{ md: '100%', lg: '100vh' }} flexDirection={{ lg: 'column' }}>
+            <AccessButtonWrap
+                position={{ md: 'relative', lg: 'fixed' }}
+                left={{ md: '0px', lg: '365px' }}
+                height={{ md: '100%', lg: '100vh' }}
+                flexDirection={{ lg: 'column' }}
+            >
                 <AccessButton
                     bg='#6b34a4'
                     variant='square' 
@@ -75,10 +80,10 @@ const App = () => {
                     Hobbies
                 </AccessButton>
             </AccessButtonWrap>
-            <Box ml={{ xl: 12 }}>
+            <Content ml={{ xl: 12 }}>
                 {sectionFlag === 'about' && <AboutMe />}
                 {sectionFlag === 'experience' && <Experience />}
-            </Box>
+            </Content>
         </Box>
     );
 };
@@ -94,6 +99,10 @@ const AccessButton = styled(Button)`
     border-radius: 0px;
     color: white;
     flex-grow: 1;
+`;
+
+const Content = styled(Box)`
+    margin-left: 100px;
 `;
 
 export default App;

@@ -6,7 +6,7 @@ import styled from 'styled-components';
 
 const SideBar = (props: { backgroundColor: any; }) => {
     return (
-        <SideBarWrap backgroundColor={props.backgroundColor}>
+        <SideBarWrap position={{ lg: 'fixed', md: 'relative' }} backgroundColor={props.backgroundColor}>
             <Box flexShrink={0}>
                 <Image
                     src={profile}
