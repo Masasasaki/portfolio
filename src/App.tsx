@@ -7,51 +7,70 @@ import { Experience } from './components/sections/Experience';
 
 const App = () => {
     const [sectionFlag, setSectionFlag] = useState('about');
+    const [color, setColor] = useState('#6b34a4');
     return (
         <Box display={{ md: 'flex' }}>
             <Box>
-                <SideBar />
+                <SideBar backgroundColor={color} />
             </Box>
             <AccessButtonWrap height={{ sm: '100%', md: '100vh' }} flexDirection={{ md: 'column' }}>
                 <AccessButton
                     bg='#6b34a4'
                     variant='square' 
-                    onClick={() => setSectionFlag('about')}
+                    onClick={() => {
+                        setSectionFlag('about');
+                        setColor('#6b34a4');
+                    }}
                 >
                     About
                 </AccessButton>
                 <AccessButton
                     bg='#bc9adf'
                     variant='square'
-                    onClick={() => setSectionFlag('experience')}
+                    onClick={() => {
+                        setSectionFlag('experience');
+                        setColor('#bc9adf');
+                    }}
                 >
                     Experience
                 </AccessButton>
                 <AccessButton
                     bg='#54143c'
                     variant='square'
-                    onClick={() => setSectionFlag('education')}
+                    onClick={() => {
+                        setSectionFlag('education');
+                        setColor('#54143c');
+                    }}
                 >
                     Education
                 </AccessButton>
                 <AccessButton
                     bg='#9d6886'
                     variant='square'
-                    onClick={() => setSectionFlag('projects')}
+                    onClick={() => {
+                        setSectionFlag('projects');
+                        setColor('#9d6886');
+                    }}
                 >
                     Projects
                 </AccessButton>
                 <AccessButton
                     bg='#bc8cac'
                     variant='square'
-                    onClick={() => setSectionFlag('skills')}
+                    onClick={() => {
+                        setSectionFlag('skills');
+                        setColor('#bc8cac');
+                    }}
                 >
                     Skills
                 </AccessButton>
                 <AccessButton
                     bg='#513846'
                     variant='square'
-                    onClick={() => setSectionFlag('hobbies')}
+                    onClick={() => {
+                        setSectionFlag('hobbies');
+                        setColor('#513846');
+                    }}
                 >
                     Hobbies
                 </AccessButton>

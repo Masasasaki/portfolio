@@ -4,9 +4,9 @@ import { Center, Text, Image, Box } from '@chakra-ui/react';
 import { EmailIcon } from '@chakra-ui/icons';
 import styled from 'styled-components';
 
-const SideBar = () => {
+const SideBar = (props: { backgroundColor: any; }) => {
     return (
-        <SideBarWrap>
+        <SideBarWrap backgroundColor={props.backgroundColor}>
             <Box flexShrink={0}>
                 <Image
                     src={profile}
@@ -21,12 +21,14 @@ const SideBar = () => {
     )
 };
 
-const SideBarWrap = styled(Center)`
+const SideBarWrap = styled(Center)<{ backgroundColor: any }>`
     flex-direction: column;
-    background: black;
+    background: ${e => e.backgroundColor};
     color: white;
     height: 100vh;
     padding: 0px 20px 0px 20px;
+    -webkit-transition: background 1s;
+    transition: background 1s;
 `;
 
 const Bold = styled.span`
