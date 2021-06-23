@@ -2,8 +2,8 @@ import { extendTheme } from '@chakra-ui/react';
 
 const theme = extendTheme({
     fonts: {
-        heading: 'Jost',
-        body: 'Jost',
+        heading: 'Source Sans Pro',
+        body: 'Source Sans Pro',
     },
     components: {
         Button: {

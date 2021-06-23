@@ -9,11 +9,11 @@ const App = () => {
     const [sectionFlag, setSectionFlag] = useState('about');
     const [color, setColor] = useState('#6b34a4');
     return (
-        <Box display={{ md: 'flex' }}>
-            <Box>
+        <Box display={{ lg: 'flex' }}>
+            <Box minW='375px'>
                 <SideBar backgroundColor={color} />
             </Box>
-            <AccessButtonWrap height={{ sm: '100%', md: '100vh' }} flexDirection={{ md: 'column' }}>
+            <AccessButtonWrap height={{ md: '100%', lg: '100vh' }} flexDirection={{ lg: 'column' }}>
                 <AccessButton
                     bg='#6b34a4'
                     variant='square' 
