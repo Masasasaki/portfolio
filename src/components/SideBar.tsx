@@ -1,20 +1,22 @@
 import React from 'react';
 import profile from '../images/profile.jpg';
-import { Center, Text, Image } from '@chakra-ui/react';
+import { Center, Text, Image, Box } from '@chakra-ui/react';
 import { EmailIcon } from '@chakra-ui/icons';
 import styled from 'styled-components';
 
 const SideBar = () => {
     return (
         <SideBarWrap>
-            <Image
-                src={profile}
-                alt='Masaki Asanuma'
-                borderRadius='full'
-                boxSize='300px'
-            />
-            <Text fontSize='5xl'>Masaki <Bold>Asanuma</Bold></Text>
-            <Text fontSize='xl'><EmailIcon /> - masakiasanuma@outlook.com</Text>
+            <Box flexShrink={0}>
+                <Image
+                    src={profile}
+                    alt='Masaki Asanuma'
+                    borderRadius='full'
+                    width={{ base: '300px' }}
+                />
+            </Box>
+            <Text fontSize={{ base: '5xl' }}>Masaki <Bold>Asanuma</Bold></Text>
+            <Text fontSize={{ base: 'xl' }}><EmailIcon /> - masakiasanuma@outlook.com</Text>
         </SideBarWrap>
     )
 };

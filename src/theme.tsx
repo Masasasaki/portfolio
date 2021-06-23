@@ -5,6 +5,15 @@ const theme = extendTheme({
         heading: 'Jost',
         body: 'Jost',
     },
+    components: {
+        Button: {
+            variants: {
+                'square': {
+                    borderRadius: '0px',
+                },
+            },
+        },
+    },
 })
 
 export default theme
