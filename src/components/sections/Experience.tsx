@@ -81,6 +81,7 @@ const Experience = () => {
                             </AccordionPanel>
                         </AccordionItem>
                     </AccordionWrap>
+                    <InfoText fontSize= {{ base: 'lg' }}>Tech used: React (Hooks, Router), MobX, styled-components, TypeScript, Python Django, PostgresSQL, Docker, Azure DevOps</InfoText>
                 </EntryBody>
             </ExperienceEntry>
             <ExperienceEntry boxShadow='base'>
@@ -138,6 +139,7 @@ const Experience = () => {
                             </AccordionPanel>
                         </AccordionItem>
                     </AccordionWrap>
+                    <InfoText fontSize= {{ base: 'lg' }}>Tech used: Docker, TeamCity, PowerShell, Bash, Redgate Deploy, RabbitMQ, MongoDB, Microsoft SQL, Kubernetes, Vault (Hashicorp), Artifactory (JFrog), JIRA</InfoText>
                 </EntryBody>
             </ExperienceEntry>
         </Wrap>
@@ -192,6 +194,7 @@ const Bold = styled.span`
 
 const AccordionWrap = styled(Accordion)`
     padding-top: 10px;
+    padding-bottom: 10px;
 `;
 
 const Wrap = styled.div`

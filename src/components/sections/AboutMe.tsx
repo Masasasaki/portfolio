@@ -13,6 +13,10 @@ const AboutMe = () => {
                     deploying a software application in various contexts. Outside of CS, I am a fingerstyle guitarist, 
                     a coffee enthusiast, and a lover of worldbuilding!
                 </Content>
+                <br />
+                <Content>
+                    👈 Learn more about me by checking out the other sections!
+                </Content>
             </AboutWrap>
         </Wrap>
     );
