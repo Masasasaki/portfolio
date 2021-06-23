@@ -1,13 +1,21 @@
-import React, { useState } from 'react';
-import { Box, Button } from '@chakra-ui/react';
+import React, { useState, useEffect } from 'react';
+import { Box, Button, SlideFade, useDisclosure } from '@chakra-ui/react';
 import styled from 'styled-components';
 import { SideBar } from './components/SideBar';
 import { AboutMe } from './components/sections/AboutMe';
 import { Experience } from './components/sections/Experience';
+import { Education } from './components/sections/Education';
+import { Hobbies } from './components/sections/Hobbies';
+import { Projects } from './components/sections/Projects';
+import { Skills } from './components/sections/Skills';
 
 const App = () => {
     const [sectionFlag, setSectionFlag] = useState('about');
     const [color, setColor] = useState('#6b34a4');
+    const { isOpen, onToggle } = useDisclosure();
+
+    useEffect(onToggle, [sectionFlag]);
+
     return (
         <Box display={{ lg: 'flex' }}>
             <Box minW='375px'>
@@ -25,6 +33,7 @@ const App = () => {
                     onClick={() => {
                         setSectionFlag('about');
                         setColor('#6b34a4');
+                        onToggle();
                     }}
                 >
                     About
@@ -35,6 +44,7 @@ const App = () => {
                     onClick={() => {
                         setSectionFlag('experience');
                         setColor('#bc9adf');
+                        onToggle();
                     }}
                 >
                     Experience
@@ -45,6 +55,7 @@ const App = () => {
                     onClick={() => {
                         setSectionFlag('education');
                         setColor('#54143c');
+                        onToggle();
                     }}
                 >
                     Education
@@ -55,6 +66,7 @@ const App = () => {
                     onClick={() => {
                         setSectionFlag('projects');
                         setColor('#9d6886');
+                        onToggle();
                     }}
                 >
                     Projects
@@ -65,6 +77,7 @@ const App = () => {
                     onClick={() => {
                         setSectionFlag('skills');
                         setColor('#bc8cac');
+                        onToggle();
                     }}
                 >
                     Skills
@@ -75,18 +88,57 @@ const App = () => {
                     onClick={() => {
                         setSectionFlag('hobbies');
                         setColor('#513846');
+                        onToggle();
                     }}
                 >
                     Hobbies
                 </AccessButton>
             </AccessButtonWrap>
-            <Content ml={{ xl: 12 }}>
-                {sectionFlag === 'about' && <AboutMe />}
-                {sectionFlag === 'experience' && <Experience />}
-            </Content>
+                <Content ml={{ xl: 12 }}>
+                    {
+                        sectionFlag === 'about' && 
+                        <FadeWrap offsetY='30px' offsetX='30px' in={isOpen}>
+                            <AboutMe />
+                        </FadeWrap>
+                    }
+                    {
+                        sectionFlag === 'experience' && 
+                        <FadeWrap offsetY='30px' offsetX='30px' in={isOpen}>
+                            <Experience />
+                        </FadeWrap>
+                    }
+                    {
+                        sectionFlag === 'education' && 
+                        <FadeWrap offsetY='30px' offsetX='30px' in={isOpen}>
+                            <Education />
+                        </FadeWrap>
+                    }
+                    {
+                        sectionFlag === 'projects' && 
+                        <FadeWrap offsetY='30px' offsetX='30px' in={isOpen}>
+                            <Projects />
+                        </FadeWrap>
+                    }
+                    {
+                        sectionFlag === 'skills' && 
+                        <FadeWrap offsetY='30px' offsetX='30px' in={isOpen}>
+                            <Skills />
+                        </FadeWrap>
+                    }
+                    {
+                        sectionFlag === 'hobbies' && 
+                        <FadeWrap offsetY='30px' offsetX='30px' in={isOpen}>
+                            <Hobbies />
+                        </FadeWrap>
+                    }
+                </Content>
         </Box>
     );
 };
+
+const FadeWrap = styled(SlideFade)`
+    transition-duration: 1s;
+`;
 
 const AccessButtonWrap = styled(Box)`
     display: flex;
