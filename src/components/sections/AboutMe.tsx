@@ -15,7 +15,7 @@ const AboutMe = () => {
                 </Content>
                 <br />
                 <Content>
-                    👈 Learn more about me by checking out the other sections!
+                    Learn more about me by checking out the other sections!
                 </Content>
             </AboutWrap>
         </Wrap>

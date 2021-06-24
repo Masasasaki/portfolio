@@ -94,7 +94,7 @@ const App = () => {
                     Hobbies
                 </AccessButton>
             </AccessButtonWrap>
-                <Content ml={{ xl: 12 }}>
+                <Box marginLeft={{ md: '0px', lg: '100px' }}>
                     {
                         sectionFlag === 'about' && 
                         <FadeWrap offsetY='30px' offsetX='30px' in={isOpen}>
@@ -131,7 +131,7 @@ const App = () => {
                             <Hobbies />
                         </FadeWrap>
                     }
-                </Content>
+                </Box>
         </Box>
     );
 };
@@ -151,10 +151,6 @@ const AccessButton = styled(Button)`
     border-radius: 0px;
     color: white;
     flex-grow: 1;
-`;
-
-const Content = styled(Box)`
-    margin-left: 100px;
 `;
 
 export default App;

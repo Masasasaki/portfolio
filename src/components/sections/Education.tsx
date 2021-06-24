@@ -2,6 +2,7 @@ import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPane
 import React from 'react';
 import styled from 'styled-components';
 import georgiatech from '../../images/gtlogo.png';
+import spartans from '../../images/spartans.jpg';
 
 const Education = () => {
     return (
@@ -77,6 +78,61 @@ const Education = () => {
                             </h2>
                             <AccordionPanel pb={4}>
                             <InfoText fontSize={{ base: 'lg' }}>Snare Drummer at Yellow Jackets Marching Band, IT Support Assistant within College of Computing</InfoText>
+                            </AccordionPanel>
+                        </AccordionItem>
+                    </AccordionWrap>
+                </EntryBody>
+            </EducationEntry>
+            <EducationEntry boxShadow='base'>
+                <EntryHeader>
+                    <Image src={spartans} alt='Spartans' boxSize='100px' borderRadius='md' />
+                    <HeaderInfo>
+                        <HeaderWrap
+                            flexDirection={{ base: 'column', md: 'row', lg: 'column', xl: 'row' }}
+                            alignItems={{ base: 'flex-start', md: 'center', lg: 'flex-start', xl: 'center' }}
+                        >
+                            <Bold><InfoText fontSize={{ base: '3xl' }}>South High School</InfoText></Bold>
+                            <DateBadge>
+                                <Badge borderRadius='full' px='2' colorScheme='teal'>
+                                    Sep 2014 - Jun 2018
+                                </Badge>
+                            </DateBadge>
+                        </HeaderWrap>
+                        <HeaderWrap
+                            flexDirection={{ base: 'column', md: 'row', lg: 'column', xl: 'row' }}
+                            alignItems={{ base: 'flex-start', md: 'center', lg: 'flex-start', xl: 'center' }}
+                        >
+                            <InfoText fontSize={{ base: '2xl' }}>High School Diploma</InfoText>
+                            <Box
+                                color='gray.500'
+                                fontWeight='semibold'
+                                letterSpacing='wide'
+                                fontSize='xs'
+                                textTransform='uppercase'
+                                ml='2'
+                            >
+                                Torrance, California
+                            </Box>
+                        </HeaderWrap>
+                    </HeaderInfo>
+                </EntryHeader>
+                <EntryBody>
+                    <InfoText fontSize={{ base: 'xl' }}>Developed my interest for software development & engineering primarily through AP Computer Science, Robotics, and working as a CS tutor/teacher.</InfoText>
+                    <AccordionWrap allowMultiple>
+                        <AccordionItem>
+                            <h2>
+                            <AccordionButton _expanded={{ bg: '#18453B', color: 'white', fontWeight: 'bolder' }}>
+                                <Box flex='1' textAlign='left'>
+                                    Activities
+                                </Box>
+                                <AccordionIcon />
+                            </AccordionButton>
+                            </h2>
+                            <AccordionPanel pb={4}>
+                                <UnorderedList>
+                                    <ListItemPoint fontSize='lg'>President at FRC Team 1197, primarily focused on robot software.</ListItemPoint>
+                                    <ListItemPoint fontSize='lg'>Drum Captain at Spartans Marching Band, performed as a snare drummer.</ListItemPoint>
+                                </UnorderedList>
                             </AccordionPanel>
                         </AccordionItem>
                     </AccordionWrap>
