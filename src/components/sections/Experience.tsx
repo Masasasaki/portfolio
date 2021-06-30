@@ -1,6 +1,20 @@
-import { StarIcon } from '@chakra-ui/icons';
-import { Heading, Image, Box, Text, ListItem, UnorderedList, Badge, Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Divider } from '@chakra-ui/react';
 import React from 'react';
+
+import {
+    Heading,
+    Image,
+    Box,
+    Text,
+    ListItem,
+    UnorderedList,
+    Badge,
+    Accordion,
+    AccordionButton,
+    AccordionIcon,
+    AccordionItem,
+    AccordionPanel,
+} from '@chakra-ui/react';
+
 import styled from 'styled-components';
 import kpmg from '../../images/KPMG.jpg';
 import ukg from '../../images/ukg.jpg';

@@ -11,7 +11,7 @@ import { Skills } from './components/sections/Skills';
 
 const App = () => {
     const [sectionFlag, setSectionFlag] = useState('about');
-    const [color, setColor] = useState('#6b34a4');
+    const [color, setColor] = useState('#2F5434');
     const { isOpen, onToggle } = useDisclosure();
 
     useEffect(onToggle, [sectionFlag]);
@@ -28,66 +28,66 @@ const App = () => {
                 flexDirection={{ lg: 'column' }}
             >
                 <AccessButton
-                    bg='#6b34a4'
+                    bg='#2F5434'
                     variant='square' 
                     onClick={() => {
                         setSectionFlag('about');
-                        setColor('#6b34a4');
+                        setColor('#2F5434');
                         onToggle();
                     }}
                 >
                     About
                 </AccessButton>
                 <AccessButton
-                    bg='#bc9adf'
+                    bg='#437944'
                     variant='square'
                     onClick={() => {
                         setSectionFlag('experience');
-                        setColor('#bc9adf');
+                        setColor('#437944');
                         onToggle();
                     }}
                 >
                     Experience
                 </AccessButton>
                 <AccessButton
-                    bg='#54143c'
+                    bg='#528C5B'
                     variant='square'
                     onClick={() => {
                         setSectionFlag('education');
-                        setColor('#54143c');
+                        setColor('#528C5B');
                         onToggle();
                     }}
                 >
                     Education
                 </AccessButton>
                 <AccessButton
-                    bg='#9d6886'
+                    bg='#8FBC90'
                     variant='square'
                     onClick={() => {
                         setSectionFlag('projects');
-                        setColor('#9d6886');
+                        setColor('#8FBC90');
                         onToggle();
                     }}
                 >
                     Projects
                 </AccessButton>
                 <AccessButton
-                    bg='#bc8cac'
+                    bg='#005740'
                     variant='square'
                     onClick={() => {
                         setSectionFlag('skills');
-                        setColor('#bc8cac');
+                        setColor('#005740');
                         onToggle();
                     }}
                 >
                     Skills
                 </AccessButton>
                 <AccessButton
-                    bg='#513846'
+                    bg='#003220'
                     variant='square'
                     onClick={() => {
                         setSectionFlag('hobbies');
-                        setColor('#513846');
+                        setColor('#003220');
                         onToggle();
                     }}
                 >
