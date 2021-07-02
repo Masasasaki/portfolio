@@ -9,9 +9,23 @@ import { Music } from './components/sections/Music.jsx';
 import { Projects } from './components/sections/Projects';
 import { Skills } from './components/sections/Skills';
 
+interface sections {
+    [key: string]: string,
+}
+
 const App = () => {
+    // Green color scheme
+    const accessButtonColors: sections = {
+        about: '#0DAB76',
+        experience: '#139A43',
+        education: '#0B5D1E',
+        projects: '#053B06',
+        skills: '#000000',
+        music: '#453643',
+    };
+
     const [sectionFlag, setSectionFlag] = useState('about');
-    const [color, setColor] = useState('#2F5434');
+    const [color, setColor] = useState(accessButtonColors.about);
     const { isOpen, onToggle } = useDisclosure();
     const scroll = useBreakpointValue({ base: 800, lg: 0});
 
@@ -22,6 +36,14 @@ const App = () => {
         window.scrollTo(0, scroll!);
         // eslint-disable-next-line
     }, [sectionFlag]);
+
+    const handleAccessClick = (section: string) => {
+        setSectionFlag(section);
+        setColor(accessButtonColors[section]);
+        if (sectionFlag !== section) {
+            onToggle();
+        }
+    }
 
     return (
         <Box display={{ lg: 'flex' }}>
@@ -37,68 +59,44 @@ const App = () => {
                 flexDirection={{ lg: 'column' }}
             >
                 <AccessButton
-                    bg='#2F5434'
+                    bg={accessButtonColors.about}
                     variant='square' 
-                    onClick={() => {
-                        setSectionFlag('about');
-                        setColor('#2F5434');
-                        onToggle();
-                    }}
+                    onClick={() => handleAccessClick('about')}
                 >
                     About
                 </AccessButton>
                 <AccessButton
-                    bg='#437944'
+                    bg={accessButtonColors.experience}
                     variant='square'
-                    onClick={() => {
-                        setSectionFlag('experience');
-                        setColor('#437944');
-                        onToggle();
-                    }}
+                    onClick={() => handleAccessClick('experience')}
                 >
                     Experience
                 </AccessButton>
                 <AccessButton
-                    bg='#528C5B'
+                    bg={accessButtonColors.education}
                     variant='square'
-                    onClick={() => {
-                        setSectionFlag('education');
-                        setColor('#528C5B');
-                        onToggle();
-                    }}
+                    onClick={() => handleAccessClick('education')}
                 >
                     Education
                 </AccessButton>
                 <AccessButton
-                    bg='#8FBC90'
+                    bg={accessButtonColors.projects}
                     variant='square'
-                    onClick={() => {
-                        setSectionFlag('projects');
-                        setColor('#8FBC90');
-                        onToggle();
-                    }}
+                    onClick={() => handleAccessClick('projects')}
                 >
                     Projects
                 </AccessButton>
                 <AccessButton
-                    bg='#005740'
+                    bg={accessButtonColors.skills}
                     variant='square'
-                    onClick={() => {
-                        setSectionFlag('skills');
-                        setColor('#005740');
-                        onToggle();
-                    }}
+                    onClick={() => handleAccessClick('skills')}
                 >
                     Skills
                 </AccessButton>
                 <AccessButton
-                    bg='#003220'
+                    bg={accessButtonColors.music}
                     variant='square'
-                    onClick={() => {
-                        setSectionFlag('music');
-                        setColor('#003220');
-                        onToggle();
-                    }}
+                    onClick={() => handleAccessClick('music')}
                 >
                     Music
                 </AccessButton>
