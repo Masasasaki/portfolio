@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Button, SlideFade, useDisclosure } from '@chakra-ui/react';
+import { Box, Button, SlideFade, useBreakpointValue, useDisclosure } from '@chakra-ui/react';
 import styled from 'styled-components';
 import { SideBar } from './components/SideBar';
 import { AboutMe } from './components/sections/AboutMe';
 import { Experience } from './components/sections/Experience';
 import { Education } from './components/sections/Education';
-import { Hobbies } from './components/sections/Hobbies';
+import { Music } from './components/sections/Music.jsx';
 import { Projects } from './components/sections/Projects';
 import { Skills } from './components/sections/Skills';
 
@@ -13,8 +13,15 @@ const App = () => {
     const [sectionFlag, setSectionFlag] = useState('about');
     const [color, setColor] = useState('#2F5434');
     const { isOpen, onToggle } = useDisclosure();
+    const scroll = useBreakpointValue({ base: 800, lg: 0});
 
+    // eslint-disable-next-line
     useEffect(onToggle, [sectionFlag]);
+
+    useEffect(() => {
+        window.scrollTo(0, scroll!);
+        // eslint-disable-next-line
+    }, [sectionFlag]);
 
     return (
         <Box display={{ lg: 'flex' }}>
@@ -22,7 +29,9 @@ const App = () => {
                 <SideBar backgroundColor={color} />
             </Box>
             <AccessButtonWrap
-                position={{ md: 'relative', lg: 'fixed' }}
+                position={{ md: 'sticky', lg: 'fixed' }}
+                top={{ md: '0' }}
+                zIndex={{ base: 3 }}
                 left={{ md: '0px', lg: '365px' }}
                 height={{ md: '100%', lg: '100vh' }}
                 flexDirection={{ lg: 'column' }}
@@ -86,15 +95,15 @@ const App = () => {
                     bg='#003220'
                     variant='square'
                     onClick={() => {
-                        setSectionFlag('hobbies');
+                        setSectionFlag('music');
                         setColor('#003220');
                         onToggle();
                     }}
                 >
-                    Hobbies
+                    Music
                 </AccessButton>
             </AccessButtonWrap>
-                <Box marginLeft={{ md: '0px', lg: '100px' }}>
+                <Content marginLeft={{ md: '0px', lg: '100px' }}>
                     {
                         sectionFlag === 'about' && 
                         <FadeWrap offsetY='30px' offsetX='30px' in={isOpen}>
@@ -126,15 +135,19 @@ const App = () => {
                         </FadeWrap>
                     }
                     {
-                        sectionFlag === 'hobbies' && 
+                        sectionFlag === 'music' && 
                         <FadeWrap offsetY='30px' offsetX='30px' in={isOpen}>
-                            <Hobbies />
+                            <Music />
                         </FadeWrap>
                     }
-                </Box>
+                </Content>
         </Box>
     );
 };
+
+const Content = styled(Box)`
+    min-height: 100vh;
+`;
 
 const FadeWrap = styled(SlideFade)`
     transition-duration: 1s;

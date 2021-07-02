@@ -15,16 +15,49 @@ import {
     AccordionPanel,
 } from '@chakra-ui/react';
 
+import {
+    FaReact,
+    FaPython,
+    FaDocker,
+    FaDatabase,
+} from 'react-icons/fa';
+
+import {
+    SiGnubash,
+    SiPowershell,
+    SiStyledComponents,
+    SiDjango,
+    SiJetbrains,
+    SiMongodb,
+    SiRabbitmq,
+    SiKubernetes,
+    SiPostgresql,
+    SiAzuredevops,
+    SiAzureartifacts,
+    SiMicrosoftsqlserver,
+    SiTypescript,
+} from 'react-icons/si';
+
+import {
+    DiJira,
+} from 'react-icons/di';
+
+import {
+    RiSafe2Fill
+} from 'react-icons/ri';
+
 import styled from 'styled-components';
 import kpmg from '../../images/KPMG.jpg';
 import ukg from '../../images/ukg.jpg';
+
+const iconSize = 30;
 
 const Experience = () => {
     return (
         <Wrap>
             <Heading size='3xl'>Experience</Heading>
             <ExperienceEntry boxShadow='base'>
-                <EntryHeader>
+                <EntryHeader flexDirection={{ base: 'column', sm: 'row' }}>
                     <Image src={kpmg} alt='kpmg' boxSize='100px' borderRadius='md' />
                     <HeaderInfo>
                         <HeaderWrap
@@ -95,11 +128,44 @@ const Experience = () => {
                             </AccordionPanel>
                         </AccordionItem>
                     </AccordionWrap>
-                    <InfoText fontSize= {{ base: 'lg' }}>Tech used: React (Hooks, Router), MobX, styled-components, TypeScript, Python Django, PostgresSQL, Docker, Azure DevOps</InfoText>
+                    <TechUsed>
+                        <IconWrap bg='#1245a8' boxShadow='base'>
+                            <FaReact size={iconSize} />
+                            <Text paddingLeft='5px'>(Hooks, Router, MobX)</Text>
+                        </IconWrap>
+                        <IconWrap bg='#1245a8' boxShadow='base'>
+                            <SiStyledComponents size={iconSize} />
+                            <Text paddingLeft='5px'>styled-components</Text>
+                        </IconWrap>
+                        <IconWrap bg='#1245a8' boxShadow='base'>
+                            <SiTypescript size={iconSize} />
+                            <Text paddingLeft='5px'>TypeScript</Text>
+                        </IconWrap>
+                        <IconWrap bg='#1245a8' boxShadow='base'>
+                            <FaPython size={iconSize} />
+                            <Text paddingLeft='5px'>Python</Text>
+                        </IconWrap>
+                        <IconWrap bg='#1245a8' boxShadow='base'>
+                            <SiDjango size={iconSize} />
+                            <Text paddingLeft='5px'>Django</Text>
+                        </IconWrap>
+                        <IconWrap bg='#1245a8' boxShadow='base'>
+                            <SiPostgresql size={iconSize} />
+                            <Text paddingLeft='5px'>PostgresSQL</Text>
+                        </IconWrap>
+                        <IconWrap bg='#1245a8' boxShadow='base'>
+                            <FaDocker size={iconSize} />
+                            <Text paddingLeft='5px'>Docker</Text>
+                        </IconWrap>
+                        <IconWrap bg='#1245a8' boxShadow='base'>
+                            <SiAzuredevops size={iconSize} />
+                            <Text paddingLeft='5px'>Azure DevOps</Text>
+                        </IconWrap>
+                    </TechUsed>
                 </EntryBody>
             </ExperienceEntry>
             <ExperienceEntry boxShadow='base'>
-                <EntryHeader>
+                <EntryHeader flexDirection={{ base: 'column', sm: 'row' }}>
                     <Image src={ukg} alt='UKG' boxSize='100px' borderRadius='md' />
                     <HeaderInfo>
                         <HeaderWrap
@@ -153,7 +219,56 @@ const Experience = () => {
                             </AccordionPanel>
                         </AccordionItem>
                     </AccordionWrap>
-                    <InfoText fontSize= {{ base: 'lg' }}>Tech used: Docker, TeamCity, PowerShell, Bash, Redgate Deploy, RabbitMQ, MongoDB, Microsoft SQL, Kubernetes, Vault (Hashicorp), Artifactory (JFrog), JIRA</InfoText>
+                    <TechUsed>
+                        <IconWrap bg='#045c5c' boxShadow='base'>
+                            <FaDocker size={iconSize} />
+                            <Text paddingLeft='5px'>Docker</Text>
+                        </IconWrap>
+                        <IconWrap bg='#045c5c' boxShadow='base'>
+                            <SiJetbrains size={iconSize} />
+                            <Text paddingLeft='5px'>TeamCity</Text>
+                        </IconWrap>
+                        <IconWrap bg='#045c5c' boxShadow='base'>
+                            <SiPowershell size={iconSize} />
+                            <Text paddingLeft='5px'>Powershell</Text>
+                        </IconWrap>
+                        <IconWrap bg='#045c5c' boxShadow='base'>
+                            <SiGnubash size={iconSize} />
+                            <Text paddingLeft='5px'>Bash</Text>
+                        </IconWrap>
+                        <IconWrap bg='#045c5c' boxShadow='base'>
+                            <FaDatabase size={iconSize} />
+                            <Text paddingLeft='5px'>Redgate Deploy</Text>
+                        </IconWrap>
+                        <IconWrap bg='#045c5c' boxShadow='base'>
+                            <SiRabbitmq size={iconSize} />
+                            <Text paddingLeft='5px'>RabbitMQ</Text>
+                        </IconWrap>
+                        <IconWrap bg='#045c5c' boxShadow='base'>
+                            <SiMongodb size={iconSize} />
+                            <Text paddingLeft='5px'>MongoDB</Text>
+                        </IconWrap>
+                        <IconWrap bg='#045c5c' boxShadow='base'>
+                            <SiMicrosoftsqlserver size={iconSize} />
+                            <Text paddingLeft='5px'>MSSQL</Text>
+                        </IconWrap>
+                        <IconWrap bg='#045c5c' boxShadow='base'>
+                            <SiKubernetes size={iconSize} />
+                            <Text paddingLeft='5px'>Kubernetes</Text>
+                        </IconWrap>
+                        <IconWrap bg='#045c5c' boxShadow='base'>
+                            <RiSafe2Fill size={iconSize} />
+                            <Text paddingLeft='5px'>Vault (Hashicorp)</Text>
+                        </IconWrap>
+                        <IconWrap bg='#045c5c' boxShadow='base'>
+                            <SiAzureartifacts size={iconSize} />
+                            <Text paddingLeft='5px'>Artifactory (JFrog)</Text>
+                        </IconWrap>
+                        <IconWrap bg='#045c5c' boxShadow='base'>
+                            <DiJira size={iconSize} />
+                            <Text paddingLeft='5px'>JIRA</Text>
+                        </IconWrap>
+                    </TechUsed>
                 </EntryBody>
             </ExperienceEntry>
         </Wrap>
@@ -169,7 +284,6 @@ const ExperienceEntry = styled(Box)`
 
 const EntryHeader = styled(Box)`
     display: flex;
-    flex-direction: row;
     align-items: center;
 `;
 
@@ -216,6 +330,22 @@ const Wrap = styled.div`
     flex-direction: column;
     padding: 20px;
     width: 90%;
+`;
+
+const IconWrap = styled(Box)`
+    padding: 10px;
+    margin: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: white;
+    border-radius: 15px;
+`;
+
+const TechUsed = styled(Box)`
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 `;
 
 export { Experience };

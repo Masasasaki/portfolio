@@ -251,7 +251,7 @@ const TechUsed = styled(Text)`
     padding: 10px;
 `;
 
-const IconWrap = styled.div`
+const IconWrap = styled.span`
     padding: 0px 5px 0px 5px;
 `;
 

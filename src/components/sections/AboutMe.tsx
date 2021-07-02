@@ -10,8 +10,8 @@ const AboutMe = () => {
                 <Content>
                     My name is Masaki Asanuma, I am a third-year Computer Science undergraduate student 
                     at Georgia Tech interested in exploring the different components that goes into designing, developing, and 
-                    deploying a software application in various contexts. Outside of CS, I am a fingerstyle guitarist, 
-                    a coffee enthusiast, and a lover of worldbuilding!
+                    deploying a software application in various contexts. Outside of CS, I love to play guitar/drums and drink 
+                    a delicious cup of Ethiopian coffee brewed using my Aeropress ☕
                 </Content>
                 <br />
                 <Content>
@@ -36,7 +36,8 @@ const AboutWrap = styled(Box)`
 `;
 
 const Content = styled(Text)`
-
+    display: flex;
+    flex-direction: row;
 `;
 
 export { AboutMe };

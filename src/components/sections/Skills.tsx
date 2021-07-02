@@ -32,6 +32,7 @@ import {
     SiVisualstudio,
     SiAzureartifacts,
     SiMicrosoftsqlserver,
+    SiTypescript,
 } from 'react-icons/si';
 
 import {
@@ -69,6 +70,10 @@ const Skills = () => {
                     <IconWrap>
                         <SiJavascript size={iconSize} />
                         <Text>JavaScript (ES6)</Text>
+                    </IconWrap>
+                    <IconWrap>
+                        <SiTypescript size={iconSize} />
+                        <Text>TypeScript</Text>
                     </IconWrap>
                     <IconWrap>
                         <FaPython size={iconSize} />

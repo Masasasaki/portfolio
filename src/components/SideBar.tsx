@@ -1,5 +1,5 @@
 import React from 'react';
-import profile from '../images/profile.jpg';
+import profile from '../images/guitar1.jpeg';
 import { Center, Text, Image, Box, Button, HStack, Divider } from '@chakra-ui/react';
 import { EmailIcon } from '@chakra-ui/icons';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
