@@ -1,6 +1,20 @@
-import { Box, Heading, Image, Text, Button, Popover, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, PopoverHeader, PopoverTrigger } from '@chakra-ui/react';
 import React from 'react';
 import styled from 'styled-components';
+
+import {
+    Box,
+    Heading,
+    Image,
+    Text,
+    Button,
+    Popover,
+    PopoverArrow,
+    PopoverBody,
+    PopoverCloseButton,
+    PopoverContent,
+    PopoverHeader,
+    PopoverTrigger,
+} from '@chakra-ui/react';
 
 import mts from '../../images/MTS.png';
 import mangadex from '../../images/mangadexterity.png';
@@ -27,6 +41,7 @@ import {
     SiStyledComponents,
 } from 'react-icons/si';
 
+// Component featuring projects I have worked on
 const Projects = () => {
     const iconSize = 30;
     return (

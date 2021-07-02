@@ -28,6 +28,9 @@ const AboutMe = () => {
                     at Georgia Tech interested in exploring the different components that goes into designing, developing, and 
                     deploying a software application in various contexts. Outside of CS, I love to play guitar/drums and drink 
                     a delicious cup of Ethiopian coffee brewed using my Aeropress ☕
+                    <br />
+                    I am currently seeking a software development/engineering internship for summer 2022! Please contact me 
+                    through email or LinkedIn if you have an opportunity for me!
                 </Content>
                 <Pictures>
                     <Tabs

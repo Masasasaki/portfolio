@@ -1,9 +1,25 @@
-import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Badge, Box, Heading, Image, ListItem, Text, UnorderedList } from '@chakra-ui/react';
 import React from 'react';
 import styled from 'styled-components';
+
+import {
+    Accordion,
+    AccordionButton,
+    AccordionIcon,
+    AccordionItem,
+    AccordionPanel,
+    Badge,
+    Box,
+    Heading,
+    Image,
+    ListItem,
+    Text,
+    UnorderedList,
+} from '@chakra-ui/react';
+
 import georgiatech from '../../images/gtlogo.png';
 import spartans from '../../images/spartans.jpg';
 
+// Education section featuring the schools I went to
 const Education = () => {
     return (
         <Wrap>

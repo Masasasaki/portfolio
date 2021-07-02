@@ -1,6 +1,11 @@
-import { Box, Heading, Text } from '@chakra-ui/react';
 import React from 'react';
 import styled from 'styled-components';
+
+import {
+    Box,
+    Heading,
+    Text
+} from '@chakra-ui/react';
 
 import {
     FaReact,
@@ -51,9 +56,9 @@ import {
     RiSafe2Fill,
 } from 'react-icons/ri';
 
-const iconSize = 50;
-
+// Component featuring all the tech I used throughout my career
 const Skills = () => {
+    const iconSize = 50;
     return (
         <Wrap>
             <Heading size='3xl'>Skills</Heading>

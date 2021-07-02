@@ -1,6 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Button, SlideFade, useBreakpointValue, useDisclosure } from '@chakra-ui/react';
 import styled from 'styled-components';
+
+import {
+    Box,
+    Button,
+    SlideFade,
+    useBreakpointValue,
+    useDisclosure 
+} from '@chakra-ui/react';
+
 import { SideBar } from './components/SideBar';
 import { AboutMe } from './components/sections/AboutMe';
 import { Experience } from './components/sections/Experience';
@@ -13,6 +21,7 @@ interface sections {
     [key: string]: string,
 }
 
+// Main application component
 const App = () => {
     // Green color scheme
     const accessButtonColors: sections = {
@@ -24,19 +33,25 @@ const App = () => {
         music: '#453643',
     };
 
+    // Section flag & color state that changes on access button click
     const [sectionFlag, setSectionFlag] = useState('about');
     const [color, setColor] = useState(accessButtonColors.about);
-    const { isOpen, onToggle } = useDisclosure();
-    const scroll = useBreakpointValue({ base: 800, lg: 0});
 
+    // State used to control fade transitions
+    const { isOpen, onToggle } = useDisclosure();
+
+    // Force toggle on section switch to allow open transition
     // eslint-disable-next-line
     useEffect(onToggle, [sectionFlag]);
 
+    // Adjust default scroll point based on window size
+    const scroll = useBreakpointValue({ base: 800, lg: 0});
     useEffect(() => {
         window.scrollTo(0, scroll!);
         // eslint-disable-next-line
     }, [sectionFlag]);
 
+    // Handle access button click, change color & section flag
     const handleAccessClick = (section: string) => {
         setSectionFlag(section);
         setColor(accessButtonColors[section]);

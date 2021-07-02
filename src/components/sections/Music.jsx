@@ -1,12 +1,22 @@
-import { Box, Heading, Text, HStack, Button } from '@chakra-ui/react';
 import React from 'react';
 import styled from 'styled-components';
+
+import {
+    Box,
+    Heading,
+    Text,
+    HStack,
+    Button
+} from '@chakra-ui/react';
+
 import ReactPlayer from 'react-player';
+
 import {
     FaYoutube,
     FaInstagram,
 } from 'react-icons/fa';
 
+// Component featuring my guitar youtube channel & instagram
 const Music = () => {
     return (
         <Wrap>

@@ -1,10 +1,22 @@
 import React from 'react';
-import profile from '../images/guitar1.jpeg';
-import { Center, Text, Image, Box, Button, HStack, Divider } from '@chakra-ui/react';
-import { EmailIcon } from '@chakra-ui/icons';
-import { FaLinkedin, FaGithub } from 'react-icons/fa';
 import styled from 'styled-components';
 
+import {
+    Center,
+    Text,
+    Image,
+    Box,
+    Button,
+    HStack,
+    Divider,
+} from '@chakra-ui/react';
+
+import { EmailIcon } from '@chakra-ui/icons';
+import { FaLinkedin, FaGithub, FaDownload } from 'react-icons/fa';
+import profile from '../images/guitar1.jpeg';
+import resume from '../resume.pdf';
+
+// Sidebar component displaying contact info, name, and profile picture
 const SideBar = (props: { backgroundColor: any; }) => {
     return (
         <SideBarWrap position={{ lg: 'fixed', md: 'relative' }} backgroundColor={props.backgroundColor}>
@@ -18,7 +30,10 @@ const SideBar = (props: { backgroundColor: any; }) => {
             </Box>
             <Text fontSize={{ base: '5xl' }}>Masaki <Bold>Asanuma</Bold></Text>
             <Divider />
-            <Text paddingTop='10px' fontSize={{ base: 'xl' }}><EmailIcon /> - masakiasanuma@outlook.com</Text>
+            <Status boxShadow='base'>
+                <Text fontSize={{ base: 'xl' }} fontWeight='bolder'>Seeking summer 2022 SWE internship</Text>
+            </Status>
+            <Text fontSize={{ base: 'xl' }}><EmailIcon /> - masakiasanuma@outlook.com</Text>
             <HStack paddingTop='10px'>
                 <Button
                     background='#0072B1'
@@ -40,6 +55,14 @@ const SideBar = (props: { backgroundColor: any; }) => {
                 >
                     <FaGithub size={20} />
                 </Button>
+                <Button
+                    background='#48435C'
+                    _hover={{ bg: '#484F5C' }}
+                >
+                    <a href={resume} download='Masaki_Asanuma_Resume'>
+                        <FaDownload size={20} />
+                    </a>
+                </Button>
             </HStack>
         </SideBarWrap>
     )
@@ -53,6 +76,14 @@ const SideBarWrap = styled(Center)<{ backgroundColor: any }>`
     padding: 0px 20px 0px 20px;
     -webkit-transition: background 1s;
     transition: background 1s;
+`;
+
+const Status = styled(Box)`
+    margin: 10px 5px 5px 5px;
+    padding: 5px;
+    color: black;
+    background: white;
+    border-radius: 15px;
 `;
 
 const Bold = styled.span`

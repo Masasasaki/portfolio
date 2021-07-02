@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 
 import {
     Heading,
@@ -46,13 +47,12 @@ import {
     RiSafe2Fill
 } from 'react-icons/ri';
 
-import styled from 'styled-components';
 import kpmg from '../../images/KPMG.jpg';
 import ukg from '../../images/ukg.jpg';
 
-const iconSize = 30;
-
+// Component featuring my relevant experiences for software development
 const Experience = () => {
+    const iconSize = 30;
     return (
         <Wrap>
             <Heading size='3xl'>Experience</Heading>
